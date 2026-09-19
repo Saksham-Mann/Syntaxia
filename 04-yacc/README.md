@@ -4,7 +4,7 @@ This module implements **Syntax Analysis (Parsing)** and **Syntax-Directed Trans
 
 ---
 
-## 🏛️ Compiler Front-End Architecture
+## Compiler Front-End Architecture
 
 ```text
   Source Code
@@ -54,7 +54,7 @@ This module implements **Syntax Analysis (Parsing)** and **Syntax-Directed Trans
 
 ---
 
-## 🔨 Building and Running Yacc Projects
+## Building and Running Yacc Projects
 
 ```bash
 # Verify bison and gcc

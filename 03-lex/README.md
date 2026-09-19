@@ -4,7 +4,7 @@ This module explores industrial-grade **Lexical Analysis (Scanning)** using **Le
 
 ---
 
-## ⚙️ How Lex / Flex Works
+## How Lex / Flex Works
 
 Lex translates high-level regular expression pattern rules into a deterministic finite automaton represented as compact C lookup tables:
 
@@ -55,7 +55,7 @@ Lex translates high-level regular expression pattern rules into a deterministic 
 
 ---
 
-## 🔨 Building and Running Lex Projects
+## Building and Running Lex Projects
 
 ```bash
 # Ensure flex/lex and gcc are installed

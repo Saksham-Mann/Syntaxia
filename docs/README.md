@@ -4,7 +4,7 @@ This directory houses consolidated technical reports, formal grammar specificati
 
 ---
 
-## 📚 Contents & Planned Documentation
+## Contents & Planned Documentation
 
 1. **Compilation Pipeline Diagram**: Visualizing data transformation from source text to tokens (Flex), concrete syntax trees (Yacc), and Three-Address Code quadruples.
 2. **Formal Grammar Reference**: BNF/EBNF specifications for the Matrix expression grammar and Mini-C language.

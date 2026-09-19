@@ -54,7 +54,7 @@ where:
 
 ---
 
-## 🖥️ Running Simulations in JFLAP
+## Running Simulations in JFLAP
 
 1. Ensure Java Runtime Environment (JRE 8 or later) is installed:
    ```bash

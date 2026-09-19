@@ -1,4 +1,4 @@
-# Syntaxia ⚡
+# Syntaxia
 ### Models of Computation, Automata Theory & Compiler Design Suite
 
 [![Language - Python 3](https://img.shields.io/badge/Language-Python%203.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -11,7 +11,7 @@
 
 ---
 
-## 🏛️ Theoretical Foundations & The Chomsky Hierarchy
+## Theoretical Foundations & The Chomsky Hierarchy
 
 | Level | Language Class | Automaton Model | Grammar Type | Syntaxia Component |
 | :--- | :--- | :--- | :--- | :--- |
@@ -22,7 +22,7 @@
 
 ---
 
-## 📂 Repository Architecture
+## Repository Architecture
 
 ```text
 Syntaxia/
@@ -52,7 +52,7 @@ Syntaxia/
 
 ---
 
-## 🚀 Module Overview
+## Module Overview
 
 ### [01. Regular Expressions (`01-regex/`)](01-regex/)
 Explores regular expression compilation, non-deterministic finite automata (NFA) simulation, and Catastrophic Backtracking (ReDoS) mitigation using Python's standard library.
@@ -76,7 +76,7 @@ Parser generation, syntax tree evaluation, and intermediate representation using
 
 ---
 
-## 🛠️ Prerequisites & Installation
+## Prerequisites & Installation
 
 ### Requirements
 - **Python**: 3.9 or higher (standard library only for `01-regex`)
@@ -101,7 +101,7 @@ python 01-regex/secret-scanner/secret_scanner.py 01-regex/secret-scanner/fixture
 
 ---
 
-## 📜 License & Acknowledgments
+## License & Acknowledgments
 
 Developed as part of academic coursework in **Models of Computation / Formal Languages and Automata Theory**.  
 Released under the [MIT License](LICENSE).

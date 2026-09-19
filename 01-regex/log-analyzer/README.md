@@ -4,7 +4,7 @@ A lightweight, zero-dependency Python log parsing and cybersecurity threat detec
 
 ---
 
-## 🔍 Features & Detections
+## Features & Detections
 
 ### 1. Structured Token Extraction
 Parses **Nginx / Apache Combined & Common Log Format** and **Linux Syslog / Auth logs** into structured dictionaries using compiled regular expressions with named capture groups `(?P<name>...)`:
@@ -31,7 +31,7 @@ Parses **Nginx / Apache Combined & Common Log Format** and **Linux Syslog / Auth
 
 ---
 
-## ⚡ How to Run
+## How to Run
 
 ### Basic Syntax
 ```bash
@@ -50,7 +50,7 @@ python log_analyzer.py [TARGET_PATH] [OPTIONS]
 
 ---
 
-## 🧪 Test Cases (Using `fixtures/`)
+## Test Cases (Using `fixtures/`)
 
 ### Test Case 1: Run Built-In Self-Tests
 Validates all compiled regular expressions, parsing routines, and threat patterns:
@@ -133,7 +133,7 @@ python log_analyzer.py fixtures/access.log --json -o report.json
 
 ---
 
-## 🛡️ Regular Expression Engineering & ReDoS Safety
+## Regular Expression Engineering & ReDoS Safety
 
 1. **Named Capture Groups**: We employ `(?P<group_name>pattern)` to construct clear, zero-copy semantic records from raw log streams.
 2. **Elimination of Catastrophic Backtracking**:

@@ -45,11 +45,11 @@ python secret_scanner.py [TARGET_PATH] [OPTIONS]
 
 The project includes a `fixtures/` folder containing realistic test files in different formats:
 
-- `fixtures/.env` — Environment file with leaked AWS, Stripe, Slack, and GitHub keys.
-- `fixtures/config.json` — JSON file with quoted keys (`api_key`, `github_pat`).
-- `fixtures/deployment.yaml` — Kubernetes deployment file with a Stripe secret.
-- `fixtures/client.js` — JavaScript file with a Stripe publishable key.
-- `fixtures/clean_service.py` — Clean Python file that uses environment variables safely (0 leaks).
+- `fixtures/.env` - Environment file with leaked AWS, Stripe, Slack, and GitHub keys.
+- `fixtures/config.json` - JSON file with quoted keys (`api_key`, `github_pat`).
+- `fixtures/deployment.yaml` - Kubernetes deployment file with a Stripe secret.
+- `fixtures/client.js` - JavaScript file with a Stripe publishable key.
+- `fixtures/clean_service.py` - Clean Python file that uses environment variables safely (0 leaks).
 
 Here is how to run each test case correctly:
 
