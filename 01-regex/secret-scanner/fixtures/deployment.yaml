@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-processor
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+        - name: processor
+          image: payments:latest
+          env:
+            - name: STRIPE_SECRET
+              value: "sk_test_51M0abcdefghijklmnopqrstuvwxyz1234567890ABC"
+            - name: DUMMY_SECRET
+              value: "YOUR_API_KEY_HERE"

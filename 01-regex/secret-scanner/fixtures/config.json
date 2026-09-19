@@ -1,0 +1,10 @@
+{
+  "service": "auth-microservice",
+  "version": "2.4.1",
+  "settings": {
+    "api_key": "d9f84a1e7b6c3d2e1f0a9b8c7d6e5f4a",
+    "password": "password123",
+    "placeholder_secret": "TODO",
+    "github_pat": "github_pat_11AAAAAAAAAAAAAAAAAAAA_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+  }
+}
