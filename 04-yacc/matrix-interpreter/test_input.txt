@@ -1,0 +1,58 @@
+// ============================================================
+// Scientific Matrix & Vector Arithmetic Interpreter Test Suite
+// ============================================================
+
+// 1. Scalar Arithmetic
+s1 = 10.5;
+s2 = 3.5;
+s_sum = s1 + s2;
+s_prod = s1 * s2;
+
+// 2. Vector Operations (1D Arrays)
+v1 = [1.0, 2.0, 3.0];
+v2 = [4.0, 5.0, 6.0];
+v_sum = v1 + v2;
+v_scaled = 2.0 * v1;
+
+// 3. Matrix Definitions (Both Semicolon and Nested Syntax)
+A = [1, 2; 3, 4];
+B = [[5, 6], [7, 8]];
+
+// 4. Matrix Addition and Subtraction
+C = A + B;
+D = B - A;
+
+// 5. Matrix Scaling and Transposition (All Supported Syntaxes)
+A_scaled = 3.0 * A;
+A_transposed_prime = A';
+A_transposed_dot = A.T;
+A_transposed_caret = A^T;
+A_transposed_spaced = A ^ T;
+
+// 6. Determinant Evaluation (det)
+det_A = det(A);
+det_B = det(B);
+
+// 3x3 Matrix Determinant
+M3 = [1, 2, 3; 0, 1, 4; 5, 6, 0];
+det_M3 = det(M3);
+
+// 7. Matrix Multiplication (M x K) * (K x N)
+M1 = [1, 2, 3; 4, 5, 6];
+M2 = [7, 8; 9, 1; 2, 3];
+M_prod = M1 * M2;
+
+// 8. Matrix * Vector Transformation
+u = [2; 3];
+v_transformed = A * u;
+
+// 9. Expression Grouping and Unary Minus
+complex_expr = -(A + B) * (s1 * 0.2);
+
+// 10. Deliberate Dimension & Semantic Error Handling (Recovers Safely)
+bad_add = A + M1;
+bad_mul = M1 * A;
+bad_det = det(M1);
+
+// 11. Final Verification
+done = 1.0;
