@@ -11,6 +11,8 @@ void yyerror(const char *s);
 
 %option noyywrap
 %option yylineno
+%option nounput
+%option noinput
 
 /* ==============================================================================
  * REGULAR EXPRESSION DEFINITIONS
