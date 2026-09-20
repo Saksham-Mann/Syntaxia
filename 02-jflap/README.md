@@ -16,7 +16,7 @@ where:
 - $q_0 \in Q$: Initial start state
 - $F \subseteq Q$: Set of accepting/final states
 
-DFAs accept precisely the class of **Regular Languages (Chomsky Type-3)**.
+DFAs recognize precisely the class of **Regular Languages (Chomsky Type-3)**.
 
 ---
 
@@ -30,27 +30,25 @@ where:
 
 ---
 
-## Planned Projects
+## Implemented Projects
 
-### 1. `syntax-pda/` (Pushdown Automaton)
-- **Objective**: Design and simulate a PDA that recognizes syntactically balanced nested expressions containing parentheses `()`, square brackets `[]`, curly braces `{}`, and binary operators (`+`, `-`, `*`, `/`).
+### 1. [`syntax-pda/`](syntax-pda/) (Arithmetic & Parentheses Syntax PDA)
+- **Objective**: A minimal, deterministic 4-state Pushdown Automaton ($q_0, q_1, q_2, q_3$) validating well-formed infix arithmetic expressions and balanced arbitrary nested parentheses over alphabet $\{a, b, c, +, -, *, /, (, )\}$.
 - **Deliverables**:
-  - `syntax_checker.jff`: JFLAP XML state machine file.
-  - `state_table.md`: Comprehensive transition table documenting each $(q, a, X) \to (p, \alpha)$ step.
-  - Acceptance traces for valid and invalid expression vectors.
+  - `parentheses_syntax_pda.jff`: JFLAP 7.1 PDA state machine file.
+  - `README.md`: Formal 7-tuple definition, 22-row transition table, instantaneous description traces, and test suite.
 
 ---
 
-### 2. `literal-lexer-dfa/` (Deterministic Finite Automaton)
-- **Objective**: Construct a minimal DFA recognizing programming language literals:
-  - Decimal Integers: `[0-9]+`
-  - Floating Point (with optional exponent): `[0-9]+\.[0-9]+([eE][+-]?[0-9]+)?`
-  - Hexadecimal: `0[xX][0-9a-fA-F]+`
-  - Quoted Strings with escape sequences: `"([^"\\]|\\.)*"`
+### 2. [`literal-lexer-dfa/`](literal-lexer-dfa/) (Numerical Literal Lexer DFA)
+- **Objective**: A complete 13-state Deterministic Finite Automaton tokenizing and validating numerical literals across four categories:
+  - Decimal Integers: `0`, `42`, `+100`, `-25`
+  - Floating-Point: `3.14`, `+0.5`, `.5`, `-.75`
+  - Scientific Notation: `1e10`, `2.5E-3`, `0e5`, `+1.2e+4`
+  - Hexadecimal Integers: `0x1A`, `0xFF`, `0x10`, `0Xabc`
 - **Deliverables**:
-  - `literal_lexer.jff`: JFLAP DFA specification.
-  - `transition_matrix.md`: State transition table and dead-state analysis.
-  - Step-by-step simulation logs for boundary test cases.
+  - `literal_lexer_dfa.jff`: JFLAP 7.1 DFA model file.
+  - `README.md`: Formal 5-tuple definition, transition matrix table, step-by-step traces, dead-state analysis, and test suite.
 
 ---
 
@@ -64,4 +62,9 @@ where:
    ```bash
    java -jar JFLAP7.1.jar
    ```
-3. Open any `.jff` model file (`File -> Open`) to view state graphs, run step-by-step simulations, or run fast batch tests against multiple inputs.
+3. Open any `.jff` model file (`File -> Open...`):
+   - `02-jflap/syntax-pda/parentheses_syntax_pda.jff`
+   - `02-jflap/literal-lexer-dfa/literal_lexer_dfa.jff`
+4. Run simulations:
+   - **Step with Closure...** / **Step by State...** for step-by-step interactive tracing.
+   - **Multiple Run** for fast batch testing across valid and invalid inputs.
