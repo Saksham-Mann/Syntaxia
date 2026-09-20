@@ -31,22 +31,29 @@ Parses **Nginx / Apache Combined & Common Log Format** and **Linux Syslog / Auth
 
 ---
 
-## How to Run
+## How to Run the Program
+
+The script has **zero external dependencies**. You only need Python 3 installed.
 
 ### Basic Syntax
 ```bash
 python log_analyzer.py [TARGET_PATH] [OPTIONS]
 ```
 
-### Command-Line Flags
+### Available Command Line Options
 
 | Option | Flag | Default | Description |
 | :--- | :--- | :--- | :--- |
-| Target | positional | `.` (current folder) | Single `.log` file or directory containing log files |
-| Output Path | `-o`, `--output` | None (stdout) | Destination file path for generated report |
-| JSON Format | `-j`, `--json` | `False` | Export output in structured JSON format |
-| Verbose | `-v`, `--verbose` | `False` | Display all individual security incident records |
-| Test Mode | `--test` | `False` | Executes built-in regex rule verification tests |
+| **Target Path** | Positional | None / Interactive | Single `.log` file or directory containing log files |
+| **Target Option** | `-t`, `--target` | None | Alternative flag to specify file or folder |
+| **Output Path** | `-o`, `--output` | None (stdout) | Destination file path for generated report |
+| **Format** | `-f`, `--format` | `txt` | Report format: choose either `txt` or `json` |
+| **JSON Export** | `-j`, `--json` | `False` | Shortcut to export findings in structured JSON |
+| **Verbose** | `-v`, `--verbose` | `False` | Display all individual security incident records |
+| **Interactive** | `-i`, `--interactive` | `False` | Launch interactive menu and custom log REPL |
+| **Self-Test** | `--test` | `False` | Executes built-in regex rule verification tests |
+
+*Tip: Running `python log_analyzer.py` without arguments in an interactive terminal automatically opens the Interactive Analysis Console.*
 
 ---
 
@@ -140,3 +147,12 @@ python log_analyzer.py fixtures/access.log --json -o report.json
    - Every wildcard quantifier is strictly bounded (e.g. `[\s\S]{1,50}` instead of `.*`).
    - Repetition anchors use possessive/atomic concepts and word boundaries `\b` to prevent state explosion when parsing maliciously crafted long URIs.
 3. **URL Decoding**: The analyzer performs standard `urllib.parse.unquote()` before token inspection so attackers cannot bypass regex filters via percent-encoding (`%20UNION%20SELECT`).
+
+---
+
+## Exit Codes for CI/CD Pipelines
+
+- **Code `0`**: Clean (no cyber attacks or threat signatures detected).
+- **Code `1`**: Security incidents flagged (one or more intrusion attempts identified).
+- **Code `2`**: Invalid target path provided.
+

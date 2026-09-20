@@ -55,3 +55,12 @@ A high-throughput log parser and security threat analyzer specification that tok
 - **Detections**: SQL Injection attempts (`UNION SELECT`, `' OR '1'='1`), Directory Traversal / LFI (`../`, `/etc/passwd`), Cross-Site Scripting (`<script>`, `onerror=`), sensitive file probes (`.env`, `wp-login.php`, `.git`), and anomalous error rates.
 - **Features**: Structured token extraction (IP, timestamp, HTTP method, URI, status, response size, referer, user-agent), IP frequency aggregation, HTTP status breakdown, and JSON reporting.
 - **Specification**: See [01-regex/log-analyzer/README.md](log-analyzer/README.md) for full architecture and regular expression patterns.
+
+```bash
+# Run self-tests
+python 01-regex/log-analyzer/log_analyzer.py --test
+
+# Scan sample fixtures
+python 01-regex/log-analyzer/log_analyzer.py 01-regex/log-analyzer/fixtures/access.log
+```
+

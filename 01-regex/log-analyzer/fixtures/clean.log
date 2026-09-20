@@ -1,0 +1,5 @@
+192.168.1.10 - - [20/Sep/2026:14:20:01 +0530] "GET / HTTP/1.1" 200 4521 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+192.168.1.10 - - [20/Sep/2026:14:20:02 +0530] "GET /assets/main.css HTTP/1.1" 200 12500 "https://example.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+192.168.1.10 - - [20/Sep/2026:14:20:03 +0530] "GET /assets/bundle.js HTTP/1.1" 200 34500 "https://example.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+192.168.1.15 - - [20/Sep/2026:14:20:10 +0530] "GET /api/v1/articles?page=1 HTTP/1.1" 200 8920 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+192.168.1.20 - - [20/Sep/2026:14:20:15 +0530] "GET /images/logo.png HTTP/1.1" 304 0 "https://example.com/" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)"
