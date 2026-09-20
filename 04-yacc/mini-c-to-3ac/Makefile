@@ -1,5 +1,5 @@
 # ==============================================================================
-# Makefile: Scientific Matrix & Vector Arithmetic Interpreter
+# Makefile: Mini-C to Three-Address Code (3AC) Compiler
 # Tools: Flex (Lexer), Bison (Parser), GCC (C99 Compiler)
 # ==============================================================================
 
@@ -8,7 +8,7 @@ CFLAGS = -Wall -Wextra -std=c99
 LEX = flex
 YACC = bison -d
 
-TARGET = matrix_interpreter
+TARGET = compiler
 
 .SUFFIXES:
 
@@ -16,17 +16,17 @@ TARGET = matrix_interpreter
 
 all: $(TARGET)
 
-parser.tab.c parser.tab.h: matrix.y
-	$(YACC) -o parser.tab.c matrix.y
+parser.tab.c parser.tab.h: parser.y
+	$(YACC) parser.y
 
-lex.yy.c: matrix.l parser.tab.h
-	$(LEX) matrix.l
+lex.yy.c: lexer.l parser.tab.h
+	$(LEX) lexer.l
 
 $(TARGET): parser.tab.c lex.yy.c
-	$(CC) $(CFLAGS) lex.yy.c parser.tab.c -o $(TARGET) -lm
+	$(CC) $(CFLAGS) lex.yy.c parser.tab.c -o $(TARGET)
 
 test: $(TARGET)
-	./$(TARGET) test_input.txt
+	./$(TARGET) input.txt
 
 clean:
 ifeq ($(OS),Windows_NT)
@@ -34,10 +34,8 @@ ifeq ($(OS),Windows_NT)
 	cmd /c "if exist $(TARGET).exe del /f /q $(TARGET).exe"
 	cmd /c "if exist parser.tab.c del /f /q parser.tab.c"
 	cmd /c "if exist parser.tab.h del /f /q parser.tab.h"
-	cmd /c "if exist matrix.tab.c del /f /q matrix.tab.c"
-	cmd /c "if exist matrix.tab.h del /f /q matrix.tab.h"
 	cmd /c "if exist lex.yy.c del /f /q lex.yy.c"
 	cmd /c "if exist *.o del /f /q *.o"
 else
-	rm -f $(TARGET) $(TARGET).exe parser.tab.c parser.tab.h matrix.tab.c matrix.tab.h lex.yy.c *.o
+	rm -f $(TARGET) $(TARGET).exe parser.tab.c parser.tab.h lex.yy.c *.o
 endif
