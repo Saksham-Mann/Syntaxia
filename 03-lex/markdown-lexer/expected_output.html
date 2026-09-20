@@ -1,0 +1,66 @@
+<h1>Compiler Design &amp; Formal Grammars</h1>
+<p>A comprehensive test suite for the <strong>Flex-based Markdown Lexer</strong> written in standard C99.</p>
+<h2>Overview &amp; Architecture</h2>
+<p>Markdown is a lightweight markup language with a plain-text formatting syntax. This lexer transforms raw text streams into semantic HTML5.</p>
+<h3>Supported ATX Heading Levels</h3>
+<h4>Heading Level 4</h4>
+<h5>Heading Level 5</h5>
+<h6>Heading Level 6</h6>
+<hr />
+<h2>Typography and Text Styling</h2>
+<p>Here is a paragraph demonstrating <em>italic text with asterisks</em>, <em>italic with underscores</em>, <strong>bold text with asterisks</strong>, and <strong>bold with underscores</strong>.</p>
+<p>You can also combine formatting: <strong><em>bold and italic combined</em></strong>, or write <del>strikethrough text</del> with tildes.
+Mathematical expressions like 5 * 10 = 50 and identifiers like user_id_count remain unaffected by emphasis rules.</p>
+<p>Inline code is protected: <code>int count = (x &lt; 10 &amp;&amp; y &gt; 20);</code> with escaped entities.</p>
+<p>Here is an inline link to <a href="https://github.com/compiler-suite">Compiler Suite Documentation</a> and an image:
+<img src="https://example.org/assets/compiler-pipeline.png" alt="Compiler Pipeline Diagram" /></p>
+<hr />
+<h2>Structural Code Blocks</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(void) {
+    int alpha = 42;
+    if (alpha &gt; 0 &amp;&amp; alpha &lt; 100) {
+        printf("Value is valid: %d &amp; active!\n", alpha);
+    }
+    return 0;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class="compiler-box"&gt;
+  &lt;span id="badge"&gt;Status &amp; Progress&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code>Generic fenced block without a language specifier.
+No markdown parsing *here* or **there**!
+</code></pre>
+<hr />
+<h2>Blockquotes &amp; Citations</h2>
+<blockquote>
+  The purpose of computing is insight, not numbers.
+  Simple quotes can span multiple lines seamlessly.
+</blockquote>
+<blockquote>
+  A second isolated quote block.
+</blockquote>
+<hr />
+<h2>Lists &amp; Enumerations</h2>
+<h3>Unordered Features</h3>
+<ul>
+  <li>Deterministic finite automaton lookup tables</li>
+  <li>High-throughput O(n) stream processing</li>
+  <li>Robust memory management with C99 standard</li>
+</ul>
+<h3>Alternative Bullets</h3>
+<ul>
+  <li>Star bullet one</li>
+  <li>Star bullet two with <strong>strong emphasis</strong></li>
+  <li>Star bullet three</li>
+</ul>
+<h3>Ordered Pipeline Steps</h3>
+<ol>
+  <li>Lexical Analysis (Scanning with Flex)</li>
+  <li>Syntactic Analysis (Parsing with Bison)</li>
+  <li>Intermediate Representation generation</li>
+  <li>Target Code Generation</li>
+</ol>
+<p>Raw HTML like <kbd>Ctrl+C</kbd> and entities like &copy; 2026 &amp; &lt;models&gt; pass through cleanly.</p>
