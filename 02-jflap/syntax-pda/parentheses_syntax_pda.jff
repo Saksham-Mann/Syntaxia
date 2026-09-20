@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with JFLAP 7.1. -->
+<structure>
+	<type>pda</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>100.0</x>
+			<y>200.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>300.0</x>
+			<y>200.0</y>
+		</state>
+		<state id="2" name="q2">
+			<x>520.0</x>
+			<y>200.0</y>
+		</state>
+		<state id="3" name="q3">
+			<x>720.0</x>
+			<y>200.0</y>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<!-- ==================================================== -->
+		<!-- Transitions from q0 (Initial State)                  -->
+		<!-- ==================================================== -->
+		<!-- q0 -> q1: Open bracket '(' pushes onto initial stack marker Z -->
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>(</read>
+			<pop>Z</pop>
+			<push>(Z</push>
+		</transition>
+		<!-- q0 -> q2: Initial operand 'a' (stack top Z unchanged) -->
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read>a</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+		<!-- q0 -> q2: Initial operand 'b' (stack top Z unchanged) -->
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read>b</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+		<!-- q0 -> q2: Initial operand 'c' (stack top Z unchanged) -->
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read>c</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+
+		<!-- ==================================================== -->
+		<!-- Transitions from q1 (Needs Operand / Inside Bracket) -->
+		<!-- ==================================================== -->
+		<!-- q1 -> q1: Nested open bracket '(' with stack top '(' -->
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>(</read>
+			<pop>(</pop>
+			<push>((</push>
+		</transition>
+		<!-- q1 -> q1: Open bracket '(' following top-level operator (stack top Z) -->
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>(</read>
+			<pop>Z</pop>
+			<push>(Z</push>
+		</transition>
+		<!-- q1 -> q2: Operand 'a' with stack top '(' (stack unchanged) -->
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>a</read>
+			<pop>(</pop>
+			<push>(</push>
+		</transition>
+		<!-- q1 -> q2: Operand 'a' with stack top Z (stack unchanged) -->
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>a</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+		<!-- q1 -> q2: Operand 'b' with stack top '(' (stack unchanged) -->
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>b</read>
+			<pop>(</pop>
+			<push>(</push>
+		</transition>
+		<!-- q1 -> q2: Operand 'b' with stack top Z (stack unchanged) -->
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>b</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+		<!-- q1 -> q2: Operand 'c' with stack top '(' (stack unchanged) -->
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>c</read>
+			<pop>(</pop>
+			<push>(</push>
+		</transition>
+		<!-- q1 -> q2: Operand 'c' with stack top Z (stack unchanged) -->
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>c</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+
+		<!-- ==================================================== -->
+		<!-- Transitions from q2 (Post-Operand / Needs Operator)   -->
+		<!-- ==================================================== -->
+		<!-- q2 -> q1: Operator '+' with stack top '(' (stack unchanged) -->
+		<transition>
+			<from>2</from>
+			<to>1</to>
+			<read>+</read>
+			<pop>(</pop>
+			<push>(</push>
+		</transition>
+		<!-- q2 -> q1: Operator '+' with stack top Z (stack unchanged) -->
+		<transition>
+			<from>2</from>
+			<to>1</to>
+			<read>+</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+		<!-- q2 -> q1: Operator '-' with stack top '(' (stack unchanged) -->
+		<transition>
+			<from>2</from>
+			<to>1</to>
+			<read>-</read>
+			<pop>(</pop>
+			<push>(</push>
+		</transition>
+		<!-- q2 -> q1: Operator '-' with stack top Z (stack unchanged) -->
+		<transition>
+			<from>2</from>
+			<to>1</to>
+			<read>-</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+		<!-- q2 -> q1: Operator '*' with stack top '(' (stack unchanged) -->
+		<transition>
+			<from>2</from>
+			<to>1</to>
+			<read>*</read>
+			<pop>(</pop>
+			<push>(</push>
+		</transition>
+		<!-- q2 -> q1: Operator '*' with stack top Z (stack unchanged) -->
+		<transition>
+			<from>2</from>
+			<to>1</to>
+			<read>*</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+		<!-- q2 -> q1: Operator '/' with stack top '(' (stack unchanged) -->
+		<transition>
+			<from>2</from>
+			<to>1</to>
+			<read>/</read>
+			<pop>(</pop>
+			<push>(</push>
+		</transition>
+		<!-- q2 -> q1: Operator '/' with stack top Z (stack unchanged) -->
+		<transition>
+			<from>2</from>
+			<to>1</to>
+			<read>/</read>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+		<!-- q2 -> q2: Close bracket ')' pops matching '(' from stack -->
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>)</read>
+			<pop>(</pop>
+			<push/>
+		</transition>
+		<!-- q2 -> q3: Epsilon transition to acceptance state q3 when stack top is Z -->
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read/>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+	</automaton>
+</structure>
