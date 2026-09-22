@@ -49,6 +49,14 @@ y.tab.h
 01-regex/log-analyzer/*report.txt
 01-regex/log-analyzer/*report.json
 
+# Documentation & Master Guides
+docs/
+SYNTAXIA_ALL_PROJECTS_GUIDE.md
+syntaxia_all_projects_guide.md
+
+# Java Binaries
+*.jar
+
 # Editors & IDEs
 .vscode/
 .idea/
@@ -60,3 +68,4 @@ y.tab.h
 .DS_Store
 Thumbs.db
 desktop.ini
+
